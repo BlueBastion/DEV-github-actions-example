@@ -14,4 +14,7 @@ jobs:
       - name: Run the script, no output.
         run: ./runme.sh 'an-argument'
       - name: run script with Github Output.  Must be key=value pairs.
-        run: echo "myscript_results=$(./runme.sh 'to-output')" >> $GITHUB_OUTPUT
+        id: script_results
+        run: echo "results=$(./runme.sh 'to-output')" >> $GITHUB_OUTPUT
+      - name: Use defined outputs to add to step summary
+        run: echo ${{ steps.script_results.results }} >> $GITHUB_STEP_SUMMARY
