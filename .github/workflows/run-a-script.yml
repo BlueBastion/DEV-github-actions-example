@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: lets check what directory we're in
+        run: ls -la >> $GITHUB_OUTPUT
       - name: Dump GitHub context
-        run: scripts/runme.sh 'an-argument'
+        run: ./scripts/runme.sh 'an-argument'
       - name: run script with Github Output
-        run: scripts/runme.sh 'to-output' >> $GITHUB_OUTPUT
+        run: ./scripts/runme.sh 'to-output' >> $GITHUB_OUTPUT
