@@ -17,4 +17,9 @@ jobs:
         id: script_results
         run: echo "results=$(./runme.sh 'to-output')" >> $GITHUB_OUTPUT
       - name: Use defined outputs to add to step summary
-        run: echo ${{ steps.script_results.results }} >> $GITHUB_STEP_SUMMARY
+        env:
+          LAST_RESULT: ${{  steps.script_results.results  }}
+        run: |
+          # Since this occurs in a different "environment" context variables
+          # Must be explicitly added to the environment
+          echo $LAST_RESULT >> $GITHUB_STEP_SUMMARY 
