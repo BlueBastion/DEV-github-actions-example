@@ -1,0 +1,12 @@
+name: Running a script
+on: push
+
+jobs:
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Dump GitHub context
+        run: scripts/runme.sh 'an-argument'
+      - name: run script with Github Output
+        run: scripts/runme.sh 'to-output' >> $GITHUB_OUTPUT
