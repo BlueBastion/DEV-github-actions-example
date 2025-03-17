@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: lets check what directory we're in
-        run: ls -la >> $GITHUB_OUTPUT
+        run: echo "$(ls -la)" >> $GITHUB_OUTPUT
       - name: Dump GitHub context
         run: ./scripts/runme.sh 'an-argument'
       - name: run script with Github Output
