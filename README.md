@@ -3,9 +3,8 @@
 ## Guide  
 Intro steps are made in branches to develop a new idea, one at a time.
 
-- 00: [Starting Branch](https://github.com/BlueBastion/DEV-github-actions-example/tree/00-start)
-- 01: [Context Variables](https://github.com/BlueBastion/DEV-github-actions-example/tree/01-contexts)
-- 02: [Running a Script](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
+- 00: [Prev](https://github.com/BlueBastion/DEV-github-actions-example/tree/00-start)
+- 02: [Next](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
 
 # Github Contexts
 [This workflow]() demonstrates how to use context objects in GitHub Actions. 
@@ -99,6 +98,5 @@ Contexts are useful for:
 - Explore the [GitHub Actions documentation](https://docs.github.com/en/actions/learn-github-actions/contexts) for more details on available contexts.
 
 ## Next Section
-
 [Back](https://github.com/BlueBastion/DEV-github-actions-example/tree/00-start) |
 [Running a Script](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
