@@ -32,7 +32,7 @@ Contexts are objects that contain information about the workflow run, such as:
 
 ### `toJson` Function
 The `toJson` function is used to convert context objects into a JSON string, making it easier to inspect their contents.
-GitHub functions are documented [here](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#functions)
+Other GitHub functions are documented [here](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#functions)
 
 ---
 
@@ -93,7 +93,7 @@ Contexts are useful for:
 
 ---
 
-## Next Steps
+## Further Reading
 - Experiment with other context objects, such as `env` or `secrets`.
 - Use context information to conditionally execute steps or jobs.
 - Explore the [GitHub Actions documentation](https://docs.github.com/en/actions/learn-github-actions/contexts) for more details on available contexts.
