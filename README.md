@@ -3,12 +3,10 @@
 ## Guide  
 Intro steps are made in branches to develop a new idea, one at a time.
 
-- 00: [Starting Branch](https://github.com/BlueBastion/DEV-github-actions-example/tree/00-start)
-- 01: [Context Variables](https://github.com/BlueBastion/DEV-github-actions-example/tree/01-contexts)
-- 02: [Running a Script](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
-- 03: [Prebuilt Actions](https://github.com/BlueBastion/DEV-github-actions-example/tree/03-prebuilt-actions)
+- 01: [Previous Section](https://github.com/BlueBastion/DEV-github-actions-example/tree/01-contexts)
+- 03: [Next Section](https://github.com/BlueBastion/DEV-github-actions-example/tree/03-prebuilt-actions)
 
-# Running a Script Workflow
+# 02: Running a Script Workflow
 
 [This workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/02-running-a-script/.github/workflows/run-a-script.yml) 
 demonstrates how to run a shell script in a GitHub Actions workflow and use 
