@@ -1,0 +1,28 @@
+name: Failing-Action-No-Setup-Action
+on:
+  push:
+jobs:
+  build_release:
+    strategy:
+      matrix:
+        python-version: [ "3.12" ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python - -y
+
+      - name: Update PATH
+        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Build project for distribution
+        run: poetry test
+
+      - name: Check Version
+        id: check-version
+        run: |
+          [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || echo prerelease=true >> $GITHUB_OUTPUT
+
