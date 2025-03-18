@@ -3,6 +3,7 @@
 ## Guide  
 Intro steps are made in branches to develop a new idea, one at a time.
 
+- [TOC](https://github.com/BlueBastion/DEV-github-actions-example/tree/main)
 - [Previous Section](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
 <!-- - [Next Section]() -->
 
@@ -137,4 +138,5 @@ Variables must be expanded with the `${{ }}` syntax.
 - prevent release-action from being run if the branch is not `release`
 
 ## Next Section
+- [TOC](https://github.com/BlueBastion/DEV-github-actions-example/tree/main)
 
