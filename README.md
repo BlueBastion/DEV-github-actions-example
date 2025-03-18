@@ -10,17 +10,18 @@ Intro steps are made in branches to develop a new idea, one at a time.
 
 # Prebuilt Actions
 We added two workflows in this branch in order to highlight the use of prebuilt actions.  
-[A Failing Workflow]()  
-[Proper Workflow]()
+[A Failing Workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/i-fail.yml)  
+[Proper Workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/set-up-python.yml)
 
 ## Key Concepts
 
 ### runner-setup
-    Runners must be setup every time the action runs. Without the proper setup, commands will be missing.
+Runners must be setup every time the action runs. Without the proper setup, commands will be missing.
 
 ### prebuilt-actions
 The signature for a prebuilt action is `[owner]/[action-name]@[version]`  
-the version may be explicitly set with a sha signature if desired. If `@v1` is selected, 
+
+The version may be explicitly set with a sha signature if desired. If `@v1` is selected, 
 any minor version changes will be honored.  For example. @v1.1.0 will be run when it is available, 
 however @v2.0.0 will not.
 
@@ -40,10 +41,11 @@ Often, you will see python wheels in a release with multiple architectures.
 This is something we will introduce in the actions covered in this section.  
 However, we will explain it later. For now, you can consider them as simple variables
 
-### `$GITHUB_PATH` "Magic" Variable
-Provides a default for the PATH variable provided to the bash process called by `run:`
+### "Magic" Variables like $GITHUB_PATH
+Provides a default for the PATH variable provided to the bash process called by `run:`.  
+`$GITHUB_OUTPUT` and `$GITHUB_STEP_SUMMARY` are examples of magic variables we have seen before.
 
-### `secrets.GITHUB_TOKEN` Secret Variables & `GITHUB_TOKEN`
+### Secret Variables & `GITHUB_TOKEN`
 
 ## Overview
 Both workflows define their first and only job as follows
@@ -63,7 +65,7 @@ jobs:
 ```
 
 ### Failing Workflow
-In [this workflow](), we fail to use `actions/setup-python`
+In [this workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/i-fail.yml), we fail to use `actions/setup-python`
 ```yaml
     # ...
     steps:
@@ -87,7 +89,8 @@ In [this workflow](), we fail to use `actions/setup-python`
 ```
 
 ### Successful workflow
-In this workflow, we remember to use the setup-python action, therefore, this action should complete.  
+In [this workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/set-up-python.yml), 
+we remember to use the setup-python action, therefore, this action should complete.  
 
 Take note of the `with` directive after `uses:` in `setup-python@v5`.  This is how arguments are passed to prebuilt actions.
 ```yaml

@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "dev-github-actions-example"
+name = "runme"
 version = "0.1.1a0"
 description = ""
 authors = ["mkerostasia <mkerostasia@idealintegrations.net>"]
