@@ -3,6 +3,7 @@
 ## Guide  
 Intro steps are made in branches to develop a new idea, one at a time.
 
+- [TOC](https://github.com/BlueBastion/DEV-github-actions-example/tree/main)
 - 00: [Prev](https://github.com/BlueBastion/DEV-github-actions-example/tree/00-start)
 - 02: [Next](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
 
