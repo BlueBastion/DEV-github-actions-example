@@ -92,7 +92,9 @@ In [this workflow](https://github.com/BlueBastion/DEV-github-actions-example/blo
 In [this workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/set-up-python.yml), 
 we remember to use the setup-python action, therefore, this action should complete.  
 
-Take note of the `with` directive after `uses:` in `setup-python@v5`.  This is how arguments are passed to prebuilt actions.
+Take note of the `with` directive after `uses:` in `setup-python@v5`.  This is how arguments are passed to prebuilt actions.  
+Variables must be expanded with the `${{ }}` syntax.
+
 ```yaml
     # ...
     steps:
@@ -118,6 +120,7 @@ Take note of the `with` directive after `uses:` in `setup-python@v5`.  This is h
       - name: Check Version
         id: check-version
         run: |
+          echo version_tag="$(poetry version --short)" >> $GITHUB_OUTPUT
           [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || echo prerelease=true >> $GITHUB_OUTPUT
 
       - name: Create Release
@@ -126,5 +129,10 @@ Take note of the `with` directive after `uses:` in `setup-python@v5`.  This is h
           artifacts: "dist/*"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: false
-          prerelease: steps.check-version.outputs.prerelease == 'true'
+          prerelease: ${{ steps.check-version.outputs.prerelease }} == 'true'
+          tag: ${{ steps.check-version.outputs.version_tag }}
 ```
+
+### Follow-Up learning tasks
+- prevent release-action from being run if `outputs.prerelease` is true
+- prevent release-action from being run if the branch is not `release`
