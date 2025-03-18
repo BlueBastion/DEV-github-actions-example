@@ -4,18 +4,18 @@ on: push
 jobs:
   run-a-script:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./scripts
+    # defaults:
+    #   run:
+    #     working-directory: ./scripts
     steps:
       - uses: actions/checkout@v4
       - name: lets check what directory we're in
         run: ls -la 
       - name: Run the script, no output.
-        run: ./runme.sh 'an-argument'
+        run: scripts/runme.sh 'an-argument'
       - name: run script with Github Output.  Must be key=value pairs.
         id: script_results
-        run: echo "results=$(./runme.sh 'to-output')" >> $GITHUB_OUTPUT
+        run: echo "results=$(scripts/runme.sh 'to-output')" >> $GITHUB_OUTPUT
       - name: Use defined outputs to add to step summary
         env:
           LAST_RESULT: ${{  steps.script_results.outputs.results  }}
