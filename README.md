@@ -3,15 +3,14 @@
 ## Guide  
 Intro steps are made in branches to develop a new idea, one at a time.
 
-- 00: [Starting Branch](https://github.com/BlueBastion/DEV-github-actions-example/tree/00-start)
-- 01: [Context Variables](https://github.com/BlueBastion/DEV-github-actions-example/tree/01-contexts)
-- 02: [Running a Script](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
-- 03: [Prebuilt Actions](https://github.com/BlueBastion/DEV-github-actions-example/tree/03-prebuilt-actions)
+- [Previous Section](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
+<!-- - [Next Section]() -->
 
 # Prebuilt Actions
-We added two workflows in this branch in order to highlight the use of prebuilt actions.  
-[A Failing Workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/i-fail.yml)  
-[Proper Workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/set-up-python.yml)
+
+We added two workflows in this branch in order to highlight the use of prebuilt actions. 
+[A Failing Workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/i-fail.yml) 
+and a [Proper Workflow](https://github.com/BlueBastion/DEV-github-actions-example/blob/03-prebuilt-actions/.github/workflows/set-up-python.yml)
 
 ## Key Concepts
 
@@ -136,3 +135,6 @@ Variables must be expanded with the `${{ }}` syntax.
 ### Follow-Up learning tasks
 - prevent release-action from being run if `outputs.prerelease` is true
 - prevent release-action from being run if the branch is not `release`
+
+## Next Section
+
