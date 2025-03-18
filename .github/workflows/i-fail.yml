@@ -1,6 +1,6 @@
 name: Failing-Action-No-Setup-Action
 on:
-  workflow_dispatch:
+  push:
 jobs:
   build_release:
     strategy:
