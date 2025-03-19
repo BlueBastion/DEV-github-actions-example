@@ -19,4 +19,11 @@ jobs:
         run: |
           # Since this occurs in a different "environment" context variables
           # Must be explicitly added to the environment
-          echo $LAST_RESULT >> $GITHUB_STEP_SUMMARY 
+          echo $LAST_RESULT >> $GITHUB_STEP_SUMMARY
+  review:
+    runs-on: ubuntu-latest
+    needs: [run-a-script]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the script, no output.
+        run: scripts/runme.sh 'an-argument'
