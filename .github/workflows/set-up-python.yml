@@ -33,6 +33,27 @@ jobs:
           echo version_tag="$(poetry version --short)-${{ matrix.python-version }}" >> $GITHUB_OUTPUT
           [[ "$(poetry version --short)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || echo prerelease=true >> $GITHUB_OUTPUT
 
+      - name: Upload both text files
+        uses: actions/upload-artifact@v4
+        with:
+          name: release
+          path: dist/
+
+  download-artifact:
+    name: downloads an artifact from the last job
+    needs: [build_release]
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/download-artifact@v4
+        name: Download prior artifacts
+        with:
+          name: release
+          path: dist
+
+      - name: Display structure of downloaded files
+        run: ls -R ./
+
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
@@ -41,4 +62,3 @@ jobs:
           draft: false
           prerelease: ${{ steps.check-version.outputs.prerelease }} == 'true'
           tag: ${{ steps.check-version.outputs.version_tag }}
-
