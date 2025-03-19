@@ -21,6 +21,20 @@ jobs:
             ./text-file.txt
             ./text-file-two.txt
 
+  download-artifact:
+    name: downloads an artifact from the last job
+    needs: [build-an-artifact]
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/download-artifact@v4
+        name: Download prior artifacts
+        with:
+          name: release
+          path: ./
+      - name: Display structure of downloaded files
+        run: ls -R ./
+
       - name: Provide returns in GITHUB_OUTPUT and create the Step Summary
         shell: bash
         run: |
@@ -39,3 +53,4 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "$(cat ./text-file-two.txt)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+
