@@ -1,0 +1,32 @@
+name: Upload Build Artifact
+on:
+  push:
+      
+jobs:
+  build-an-artifact:
+    name: Build an Artifact and then upload it to Build Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Crate an artifact
+        run: echo "Is it a nice day for some bass music?" >> ./text-file.txt
+
+      - name: Crate an artifact two
+        run: echo "It is quite a nice day for some bass music" >> ./text-file-two.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release
+          path: |
+            ./text-file.txt
+            ./text-file-two.txt
+
+      - name: Dump Output
+        shell: bash
+        run: |
+          echo "run_id=${{ github.run_id }}" >> $GITHUB_OUTPUT
+          echo "repository=${{ github.repository }}" >> $GITHUB_OUTPUT
+          echo "### File 1:" >> $GITHUB_STEP_SUMMARY
+          echo "$(cat ./text-file.txt)" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "### File 2:" >> $GITHUB_STEP_SUMMARY
+          echo "$(cat ./text-file-two.txt)" >> $GITHUB_STEP_SUMMARY
