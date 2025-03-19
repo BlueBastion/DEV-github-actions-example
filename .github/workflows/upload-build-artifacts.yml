@@ -10,9 +10,10 @@ jobs:
       - name: Crate an artifact
         run: echo "Is it a nice day for some bass music?" >> ./text-file.txt
 
-      - name: Crate an artifact two
+      - name: Crate an second artifact
         run: echo "It is quite a nice day for some bass music" >> ./text-file-two.txt
-      - name: Upload artifact
+
+      - name: Upload both text files
         uses: actions/upload-artifact@v4
         with:
           name: release
@@ -20,7 +21,7 @@ jobs:
             ./text-file.txt
             ./text-file-two.txt
 
-      - name: Dump Output
+      - name: Provide returns in GITHUB_OUTPUT and create the Step Summary
         shell: bash
         run: |
           echo "run_id=${{ github.run_id }}" >> $GITHUB_OUTPUT
