@@ -15,6 +15,7 @@ Intro steps are made in branches to develop a new idea, one at a time.
 - In the 01 branch we will review what context variables are provided by default by the github runner.
 - In the 02 branch, we will run a bash script located in the repository,
 and explore the concepts of `GITHUB_OUTPUT`, and the `GITHUB_STEP_SUMMARY`
+- 02: Running a script
 
 ## Concepts
 Key Concepts
