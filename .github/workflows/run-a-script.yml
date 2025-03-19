@@ -13,12 +13,14 @@ jobs:
       - name: run script with Github Output.  Must be key=value pairs.
         id: script_results
         run: echo "results=$(scripts/runme.sh 'to-output')" >> $GITHUB_OUTPUT
+
       - name: Use defined outputs to add to step summary
         env:
           LAST_RESULT: ${{  steps.script_results.outputs.results  }}
         run: |
           # Since this occurs in a different "environment" context variables
           # Must be explicitly added to the environment
+          echo "# The Result" >> $GITHUB_STEP_SUMMARY
           echo $LAST_RESULT >> $GITHUB_STEP_SUMMARY
   review:
     runs-on: ubuntu-latest
