@@ -36,6 +36,7 @@ jobs:
       - name: Upload both text files
         uses: actions/upload-artifact@v4
         with:
+          name: artifact-${{ matrix.python-version }}
           path: dist/
 
   download-artifact:
@@ -46,8 +47,6 @@ jobs:
 
       - uses: actions/download-artifact@v4
         name: Download prior artifacts
-        with:
-          path: dist
 
       - name: Display structure of downloaded files
         run: ls -R ./
