@@ -1,6 +1,7 @@
 name: Setup Python And Poetry
 on:
   push:
+    tags: [v*.*.*]
 jobs:
   build_release:
     strategy:
@@ -54,7 +55,7 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/*"
+          artifacts: "./*"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: false
           prerelease: ${{ steps.check-version.outputs.prerelease }} == 'true'
