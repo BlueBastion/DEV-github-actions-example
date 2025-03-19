@@ -26,7 +26,7 @@ jobs:
           echo "run_id=${{ github.run_id }}" >> $GITHUB_OUTPUT
           echo "repository=${{ github.repository }}" >> $GITHUB_OUTPUT
           echo "### File 1:  " >> $GITHUB_STEP_SUMMARY
-          echo "`./text-file.txt`  " >> $GITHUB_STEP_SUMMARY
+          echo '`./text-file.txt`  ' >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "$(cat ./text-file.txt)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
@@ -34,7 +34,7 @@ jobs:
           echo "---" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### File 2:" >> $GITHUB_STEP_SUMMARY
-          echo "`./text-file-two.txt`  " >> $GITHUB_STEP_SUMMARY
+          echo '`./text-file-two.txt`  ' >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "$(cat ./text-file-two.txt)" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
