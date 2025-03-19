@@ -5,7 +5,7 @@ Intro steps are made in branches to develop a new idea, one at a time.
 
 - [TOC](https://github.com/BlueBastion/DEV-github-actions-example/tree/main)
 - [Previous Section](https://github.com/BlueBastion/DEV-github-actions-example/tree/02-running-a-script)
-<!-- - [Next Section]() -->
+- [Next Section](https://github.com/BlueBastion/DEV-github-actions-example/tree/04-build-artifacts)
 
 # Prebuilt Actions
 
